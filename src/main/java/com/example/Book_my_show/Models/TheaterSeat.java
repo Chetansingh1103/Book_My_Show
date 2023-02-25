@@ -16,7 +16,7 @@ public class TheaterSeat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(unique = true)
-    private int seatNo;
+    private String seatNo;
     private SeatType seatType;
     @ManyToOne
     @JoinColumn(referencedColumnName = "name")

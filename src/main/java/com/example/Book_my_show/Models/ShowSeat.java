@@ -19,7 +19,7 @@ public class ShowSeat {
     private int id;
     private boolean isBooked;
     private int price;
-    private int seatNo;
+    private String seatNo;
     private Time bookedAt;
     @Enumerated(value = EnumType.STRING)
     private SeatType seatType;

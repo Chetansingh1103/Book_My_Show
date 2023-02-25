@@ -18,7 +18,10 @@ public class User {
     private int id;
     private String name;
     private int age;
+    @Column(unique = true,nullable = false)
     private String email;
+    @NonNull
+    @Column(unique = true)
     private String mobNo;
     private String address;
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)

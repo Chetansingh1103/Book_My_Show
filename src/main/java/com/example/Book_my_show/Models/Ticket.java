@@ -6,6 +6,7 @@ import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "tickets")
@@ -22,6 +23,7 @@ public class Ticket {
     private LocalTime showTime;
     private LocalDate showDate;
     private String TheaterName;
+    private String ticketId = UUID.randomUUID().toString();
     @ManyToOne
     @JoinColumn
     private User user;

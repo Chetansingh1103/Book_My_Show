@@ -1,11 +1,11 @@
-package com.example.Book_my_show.Dtos.EntryDtos;
+package com.example.Book_my_show.Dtos.Request;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class UserEntryDto {
+public class UserRequestDto {
     private String name;
     private int age;
     private String email;
