@@ -1,11 +1,13 @@
 package com.example.Book_my_show.Models;
 
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -23,6 +25,7 @@ public class Ticket {
     private LocalTime showTime;
     private LocalDate showDate;
     private String TheaterName;
+    private String bookedSeats;
     private String ticketId = UUID.randomUUID().toString();
     @ManyToOne
     @JoinColumn

@@ -1,8 +1,12 @@
 package com.example.Book_my_show.Models;
 
 import com.example.Book_my_show.Enums.SeatType;
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "TheaterSeats")
@@ -15,10 +19,10 @@ public class TheaterSeat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(unique = true)
     private String seatNo;
+    @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
     @ManyToOne
-    @JoinColumn(referencedColumnName = "name")
+    @JoinColumn
     private Theater theater;
 }

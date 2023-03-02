@@ -7,7 +7,7 @@ public class TheaterRequestConvertor {
     public static Theater convertDtoToEntity(TheaterRequestDto theaterRequestDto){
         return Theater.builder()
                 .name(theaterRequestDto.getName())
-                .location(theaterRequestDto.getAddress())
+                .location(theaterRequestDto.getLocation())
                 .build();
     }
 }

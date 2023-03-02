@@ -1,10 +1,12 @@
 package com.example.Book_my_show.Models;
 
 import com.example.Book_my_show.Enums.ShowType;
-import jakarta.persistence.*;
-import jdk.jfr.Timestamp;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;

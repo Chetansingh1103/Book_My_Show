@@ -21,7 +21,12 @@ public class TheaterService {
     @Autowired
     TheaterSeatRepository theaterSeatRepository;
 
-    public String addTheater(TheaterRequestDto theaterRequestDto){
+    public String addTheater(TheaterRequestDto theaterRequestDto) throws Exception{
+
+        // Do some validation ??
+        if(theaterRequestDto.getName() == null || theaterRequestDto.getLocation() == null){
+            throw new Exception("Name and location should be valid");
+        }
 
         Theater theater = TheaterRequestConvertor.convertDtoToEntity(theaterRequestDto);
 
@@ -64,7 +69,7 @@ public class TheaterService {
             theaterSeatList.add(theaterSeat);
         }
 
-        theaterSeatRepository.saveAll(theaterSeatList);
+        //  no need to set seats because if we save the parent then child will be saved --> theaterSeatRepository.saveAll(theaterSeatList);
 
         return theaterSeatList;
     }

@@ -12,8 +12,12 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public String addUser(UserRequestDto userRequestDto) throws Exception{
+    public String addUser(UserRequestDto userRequestDto){
+//        if(userRequestDto.getName() == null || userRequestDto.getAge() == 0 || userRequestDto.getAddress() == null || userRequestDto.getEmail() == null || userRequestDto.getMobNo() == null){
+//            throw new Exception();
+//        }
         User user = UserRequestConvertor.convertDtoTOEntity(userRequestDto);
+
         userRepository.save(user);
 
         return "user added successfully";
