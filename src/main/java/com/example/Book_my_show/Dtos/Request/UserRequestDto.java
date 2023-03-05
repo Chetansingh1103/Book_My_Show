@@ -1,7 +1,6 @@
 package com.example.Book_my_show.Dtos.Request;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 public class UserRequestDto {

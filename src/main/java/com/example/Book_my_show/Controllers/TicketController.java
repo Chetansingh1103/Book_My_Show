@@ -1,7 +1,7 @@
 package com.example.Book_my_show.Controllers;
 
 import com.example.Book_my_show.Dtos.Request.TicketRequestDto;
-import com.example.Book_my_show.Services.TicketService;
+import com.example.Book_my_show.Services.Impl.TicketServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ticket")
 public class TicketController {
     @Autowired
-    TicketService ticketService;
+    TicketServiceImpl ticketService;
 
     @PostMapping("/book")
     public ResponseEntity<String> bookTicket(@RequestBody TicketRequestDto ticketRequestDto){

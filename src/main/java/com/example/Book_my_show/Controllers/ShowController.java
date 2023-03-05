@@ -1,7 +1,7 @@
 package com.example.Book_my_show.Controllers;
 
 import com.example.Book_my_show.Dtos.Request.ShowRequestDto;
-import com.example.Book_my_show.Services.ShowService;
+import com.example.Book_my_show.Services.Impl.ShowServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/show")
 public class ShowController {
     @Autowired
-    ShowService showService;
+    ShowServiceImpl showService;
     @PostMapping("/add")
     public ResponseEntity<String> addShow(@RequestBody ShowRequestDto showRequestDto){
         try {

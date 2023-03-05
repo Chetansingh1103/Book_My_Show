@@ -1,21 +1,20 @@
 package com.example.Book_my_show.Controllers;
 
 import com.example.Book_my_show.Dtos.Request.UserRequestDto;
-import com.example.Book_my_show.Services.UserService;
+import com.example.Book_my_show.Dtos.Response.UserResponseDto;
+import com.example.Book_my_show.Services.Impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class UserController {
 
     @Autowired
-    UserService userService;
+    UserServiceImpl userService;
 
     @PostMapping("/add")
     public ResponseEntity<String> addUser(@RequestBody UserRequestDto userRequestDto){
@@ -30,5 +29,14 @@ public class UserController {
             return new ResponseEntity<>(result,HttpStatus.BAD_REQUEST);
         }
 
+    }
+    @GetMapping("/get_by_id")
+    public ResponseEntity<UserResponseDto> getUserById(@RequestParam("id") int userId){
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/get_by_mobileNo")
+    public ResponseEntity<UserResponseDto> getUserByMobileNumber(@RequestParam("mobileNo") String mobileNumber){
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
