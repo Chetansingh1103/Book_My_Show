@@ -8,6 +8,8 @@ import com.example.Book_my_show.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -25,12 +27,32 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(int userId) {
+    public User getUserByUserId(int userId) {
         return null;
     }
 
     @Override
     public User getUserByMobileNumber(String MobileNumber) {
+        return null;
+    }
+
+    @Override
+    public String updateUser(UserRequestDto userRequestDto, int userId) {
+        return null;
+    }
+
+    @Override
+    public String deleteUserByUserId(int userId) {
+        return null;
+    }
+
+    @Override
+    public String deleteUserByMobileNumber(String mobileNumber) {
+        return null;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
         return null;
     }
 }

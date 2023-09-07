@@ -40,6 +40,46 @@ public class TheaterServiceImpl implements TheaterService {
         return "theater has been added";
     }
 
+    @Override
+    public Theater getTheaterByTheaterId(int TheaterId) {
+        return null;
+    }
+
+    @Override
+    public Theater getTheaterByNameAndLocation(String name, String location) {
+        return null;
+    }
+
+    @Override
+    public String rebuiltTheater(int theaterId, TheaterRequestDto theaterRequestDto) {
+        return null;
+    }
+
+    @Override
+    public String demolishTheaterByTheaterId(int theaterId) {
+        return null;
+    }
+
+    @Override
+    public String demolishTheaterByNameAndLocation(String name, String location) {
+        return null;
+    }
+
+    @Override
+    public List<Theater> getAllTheaters() {
+        return null;
+    }
+
+    @Override
+    public List<Theater> getAllTheatersAtLocation(String location) {
+        return null;
+    }
+
+    @Override
+    public List<Theater> getAllTheaterByName(String name) {
+        return null;
+    }
+
     public List<TheaterSeat> createTheaterSeats(TheaterRequestDto theaterRequestDto,Theater theater){
         int noClassicSeats = theaterRequestDto.getClassicSeatsCount();
         int noPremiumSeats = theaterRequestDto.getPremiumSeatsCount();

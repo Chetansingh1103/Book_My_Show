@@ -113,6 +113,21 @@ public class TicketServiceImpl implements TicketService {
         return "Ticket has successfully been added";
     }
 
+    @Override
+    public String cancelTicket(int ticketId) {
+        return null;
+    }
+
+    @Override
+    public Ticket getTicket(int ticketId) {
+        return null;
+    }
+
+    @Override
+    public List<Ticket> getAllTickets() {
+        return null;
+    }
+
     private String getAllottedSeatsFromShowSeats(List<String> requestedSeats){
 
         StringBuilder result = new StringBuilder();

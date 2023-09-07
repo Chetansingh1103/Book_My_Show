@@ -11,6 +11,8 @@ import com.example.Book_my_show.Services.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +58,41 @@ public class ShowServiceImpl implements ShowService {
 
         return "The show has been added successfully";
 
+    }
+
+    @Override
+    public String cancelShow(int showId) {
+        return null;
+    }
+
+    @Override
+    public Show getShow(int showId) {
+        return null;
+    }
+
+    @Override
+    public LocalTime getShowTime(String theaterName, String movieName) {
+        return null;
+    }
+
+    @Override
+    public List<Show> getAllShowsByShowDate(LocalDate localDate) {
+        return null;
+    }
+
+    @Override
+    public List<Show> getAllShowsAtLocation(String location) {
+        return null;
+    }
+
+    @Override
+    public List<Show> getAllShowsByShowDateAndLocation(String location, LocalDate localDate) {
+        return null;
+    }
+
+    @Override
+    public List<Show> getALlShowsByMovieNameAndLocation(String location, String movieName) {
+        return null;
     }
 
     private List<ShowSeat> createShowSeats(ShowRequestDto showRequestDto, Show show){
