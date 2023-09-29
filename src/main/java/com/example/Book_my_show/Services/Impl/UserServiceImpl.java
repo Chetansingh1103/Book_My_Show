@@ -1,7 +1,9 @@
 package com.example.Book_my_show.Services.Impl;
 
 import com.example.Book_my_show.Converters.UserRequestConvertor;
+import com.example.Book_my_show.Converters.UserResponseConverter;
 import com.example.Book_my_show.Dtos.Request.UserRequestDto;
+import com.example.Book_my_show.Dtos.Response.UserResponseDto;
 import com.example.Book_my_show.Models.User;
 import com.example.Book_my_show.Repositories.UserRepository;
 import com.example.Book_my_show.Services.UserService;
@@ -27,8 +29,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByUserId(int userId) {
-        return null;
+    public UserResponseDto getUserByUserId(int userId) {
+        User user = userRepository.getOne(userId);
+
+        return UserResponseConverter.convertEntityToDto(user);
     }
 
     @Override

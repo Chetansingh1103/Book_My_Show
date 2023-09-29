@@ -32,7 +32,15 @@ public class UserController {
     }
     @GetMapping("/get_by_id")
     public ResponseEntity<UserResponseDto> getUserById(@RequestParam("id") int userId){
-        return new ResponseEntity<>(HttpStatus.CREATED);
+       try {
+           UserResponseDto userResponseDto = userService.getUserByUserId(userId);
+
+           return new ResponseEntity<>(userResponseDto,HttpStatus.FOUND);
+       }
+       catch (Exception e){
+           UserResponseDto userResponseDto = new UserResponseDto();
+           return new ResponseEntity<>(userResponseDto,HttpStatus.NOT_FOUND);
+       }
     }
 
     @GetMapping("/get_by_mobileNo")
